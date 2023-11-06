@@ -1,0 +1,110 @@
+[
+    {
+        "foodName": "Spaghetti Bolognese",
+        "foodImage": "https://i.ibb.co/Gp6yNs2/homescreenify-s-A3wym-Yqya-I-unsplash.jpg",
+        "foodQuantity": 4,
+        "pickupLocation": "123 Main Street, Cityville",
+        "expiredDateTime": "2023-12-15",
+        "additionalNotes": "Homemade pasta with meat sauce",
+        "donatorImage": "https://i.ibb.co/bQXySn8/jurica-koletic-7-YVZYZe-ITc8-unsplash.jpg",
+        "donatorName": "John Doe",
+        "donatorEmail": "john@example.com",
+        "foodStatus": "available"
+    },
+    {
+        "foodName": "Vegetable Stir-Fry",
+        "foodImage": "https://i.ibb.co/Gp6yNs2/homescreenify-s-A3wym-Yqya-I-unsplash.jpg",
+        "foodQuantity": 2,
+        "pickupLocation": "456 Elm Street, Townsville",
+        "expiredDateTime": "2023-12-18",
+        "additionalNotes": "Freshly cooked mixed vegetables",
+        "donatorImage": "https://i.ibb.co/bQXySn8/jurica-koletic-7-YVZYZe-ITc8-unsplash.jpg",
+        "donatorName": "Alice Smith",
+        "donatorEmail": "alice@example.com",
+        "foodStatus": "available"
+    },
+    {
+        "foodName": "Chicken and Rice",
+        "foodImage": "https://i.ibb.co/Gp6yNs2/homescreenify-s-A3wym-Yqya-I-unsplash.jpg",
+        "foodQuantity": 3,
+        "pickupLocation": "789 Oak Avenue, Villagetown",
+        "expiredDateTime": "2023-12-10",
+        "additionalNotes": "Home-cooked chicken and rice dish",
+        "donatorImage": "https://i.ibb.co/bQXySn8/jurica-koletic-7-YVZYZe-ITc8-unsplash.jpg",
+        "donatorName": "Sarah Wilson",
+        "donatorEmail": "sarah@example.com",
+        "foodStatus": "available"
+    },
+    {
+        "foodName": "Quinoa Salad",
+        "foodImage": "https://i.ibb.co/Gp6yNs2/homescreenify-s-A3wym-Yqya-I-unsplash.jpg",
+        "foodQuantity": 5,
+        "pickupLocation": "101 Pine Lane, Ruralville",
+        "expiredDateTime": "2023-12-16",
+        "additionalNotes": "Healthy quinoa salad with vegetables",
+        "donatorImage": "https://i.ibb.co/bQXySn8/jurica-koletic-7-YVZYZe-ITc8-unsplash.jpg",
+        "donatorName": "Michael Johnson",
+        "donatorEmail": "michael@example.com",
+        "foodStatus": "available"
+    },
+    {
+        "foodName": "Fruit Platter",
+        "foodImage": "https://i.ibb.co/Gp6yNs2/homescreenify-s-A3wym-Yqya-I-unsplash.jpg",
+        "foodQuantity": 6,
+        "pickupLocation": "222 Maple Street, Suburbia",
+        "expiredDateTime": "2023-12-20",
+        "additionalNotes": "Assorted fresh fruit platter",
+        "donatorImage": "https://i.ibb.co/bQXySn8/jurica-koletic-7-YVZYZe-ITc8-unsplash.jpg",
+        "donatorName": "Emma Davis",
+        "donatorEmail": "emma@example.com",
+        "foodStatus": "available"
+    },
+    {
+        "foodName": "Cheese Pizza",
+        "foodImage": "https://i.ibb.co/Gp6yNs2/homescreenify-s-A3wym-Yqya-I-unsplash.jpg",
+        "foodQuantity": 4,
+        "pickupLocation": "555 Birch Road, Hometown",
+        "expiredDateTime": "2023-12-14",
+        "additionalNotes": "Delicious cheese pizza",
+        "donatorImage": "https://i.ibb.co/bQXySn8/jurica-koletic-7-YVZYZe-ITc8-unsplash.jpg",
+        "donatorName": "Mark Wilson",
+        "donatorEmail": "mark@example.com",
+        "foodStatus": "available"
+    },
+    {
+        "foodName": "Soup of the Day",
+        "foodImage": "https://i.ibb.co/Gp6yNs2/homescreenify-s-A3wym-Yqya-I-unsplash.jpg",
+        "foodQuantity": 8,
+        "pickupLocation": "333 Cedar Drive, Countryside",
+        "expiredDateTime": "2023-12-17",
+        "additionalNotes": "Freshly made soup with daily specials",
+        "donatorImage": "https://i.ibb.co/bQXySn8/jurica-koletic-7-YVZYZe-ITc8-unsplash.jpg",
+        "donatorName": "Linda Baker",
+        "donatorEmail": "linda@example.com",
+        "foodStatus": "available"
+    },
+    {
+        "foodName": "Beef Tacos",
+        "foodImage": "https://i.ibb.co/Gp6yNs2/homescreenify-s-A3wym-Yqya-I-unsplash.jpg",
+        "foodQuantity": 5,
+        "pickupLocation": "444 Willow Lane, Suburbville",
+        "expiredDateTime": "2023-12-12",
+        "additionalNotes": "Tasty beef tacos with all the fixings",
+        "donatorImage": "https://i.ibb.co/bQXySn8/jurica-koletic-7-YVZYZe-ITc8-unsplash.jpg",
+        "donatorName": "Robert Clark",
+        "donatorEmail": "robert@example.com",
+        "foodStatus": "available"
+    },
+    {
+        "foodName": "Mixed Berries Smoothie",
+        "foodImage": "https://i.ibb.co/Gp6yNs2/homescreenify-s-A3wym-Yqya-I-unsplash.jpg",
+        "foodQuantity": 2,
+        "pickupLocation": "777 Cherry Avenue, Orchardville",
+        "expiredDateTime": "2023-12-21",
+        "additionalNotes": "Refreshing mixed berries smoothie",
+        "donatorImage": "https://i.ibb.co/bQXySn8/jurica-koletic-7-YVZYZe-ITc8-unsplash.jpg",
+        "donatorName": "Olivia Green",
+        "donatorEmail": "olivia@example.com",
+        "foodStatus": "available"
+    }
+]
