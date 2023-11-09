@@ -56,6 +56,16 @@ async function run() {
       res.send(result);
     });
 
+    app.get("/myFoodRequest", async (req, res) => {
+      let query = { requesterEmail: req.query.requesterEmail };
+      // if (req.query.requesterEmail) {
+      //   query = { requesterEmail: req.query.requesterEmail };
+      // }
+      const cursor = requestedFoodsCollection.find(query);
+      const result = await cursor.toArray();
+      res.send(result);
+    });
+
     app.get("/availableFoods", async (req, res) => {
       // console.log(req.query.foodStatus);
       const query = { foodStatus: req.query.foodStatus };
@@ -69,6 +79,33 @@ async function run() {
       // console.log(id);
       const query = { _id: new ObjectId(id) };
       const result = await availableFoodsCollection.findOne(query);
+      res.send(result);
+    });
+
+    app.get("/manageSingleFood/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { foodId: id };
+      const result = await requestedFoodsCollection.findOne(query);
+      res.send(result);
+    });
+
+    app.put("/manageSingleFood/:id", async (req, res) => {
+      const id = req.params.id;
+      const data = req.body;
+      const filter = { _id: new ObjectId(id) };
+      const options = { upsert: true };
+      const updateFood = {
+        $set: {
+          foodStatus: data.foodStatus,
+        },
+      };
+
+      const result = await availableFoodsCollection.updateOne(
+        filter,
+        updateFood,
+        options
+      );
+
       res.send(result);
     });
 
@@ -107,6 +144,7 @@ async function run() {
         updateFood,
         options
       );
+      res.send(result);
     });
 
     app.delete("/deleteFood/:id", async (req, res) => {
@@ -121,6 +159,13 @@ async function run() {
     app.post("/requestedFoods", async (req, res) => {
       const newFood = req.body;
       const result = await requestedFoodsCollection.insertOne(newFood);
+      res.send(result);
+    });
+
+    app.delete("/myFoodDelete/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const result = await requestedFoodsCollection.deleteOne(query);
       res.send(result);
     });
 
