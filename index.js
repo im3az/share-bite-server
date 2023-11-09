@@ -31,6 +31,21 @@ async function run() {
       .db("shareBite")
       .collection("requestedFoods");
 
+    // available food api
+    app.get("/availableFoods", async (req, res) => {
+      let query = {};
+      if (req.query.foodStatus) {
+        query = { foodStatus: req.query.foodStatus };
+      }
+
+      if (req.query.donatorEmail) {
+        query = { donatorEmail: req.query.donatorEmail };
+      }
+      const cursor = availableFoodsCollection.find(query);
+      const result = await cursor.toArray();
+      res.send(result);
+    });
+
     app.get("/availableFoods", async (req, res) => {
       // console.log(req.query.foodStatus);
       const query = { foodStatus: req.query.foodStatus };
@@ -52,6 +67,8 @@ async function run() {
       const result = await availableFoodsCollection.insertOne(food);
       res.send(result);
     });
+
+    // requested food api
 
     app.post("/requestedFoods", async (req, res) => {
       const newFood = req.body;
