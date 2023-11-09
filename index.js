@@ -34,10 +34,20 @@ async function run() {
     // available food api
     app.get("/availableFoods", async (req, res) => {
       let query = {};
-      if (req.query.foodStatus) {
+      if (req.query?.foodStatus) {
         query = { foodStatus: req.query.foodStatus };
       }
 
+      // if (req.query.donatorEmail) {
+      //   query = { donatorEmail: req.query.donatorEmail };
+      // }
+      const cursor = availableFoodsCollection.find(query);
+      const result = await cursor.toArray();
+      res.send(result);
+    });
+
+    app.get("/manageMyFoods", async (req, res) => {
+      let query = {};
       if (req.query.donatorEmail) {
         query = { donatorEmail: req.query.donatorEmail };
       }
@@ -66,6 +76,37 @@ async function run() {
       const food = req.body;
       const result = await availableFoodsCollection.insertOne(food);
       res.send(result);
+    });
+
+    app.get("/updateFoods/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const result = await availableFoodsCollection.findOne(query);
+      res.send(result);
+    });
+
+    app.put("/updateFoods/:id", async (req, res) => {
+      const id = req.params.id;
+      const data = req.body;
+      const filter = { _id: new ObjectId(id) };
+      const options = { upsert: true };
+      const updateFood = {
+        $set: {
+          foodName: data.foodName,
+          foodImage: data.foodImage,
+          foodQuantity: data.foodQuantity,
+          pickupLocation: data.pickupLocation,
+          expiredDateTime: data.expiredDateTime,
+          additionalNotes: data.additionalNotes,
+          foodStatus: data.foodStatus,
+        },
+      };
+
+      const result = await availableFoodsCollection.updateOne(
+        filter,
+        updateFood,
+        options
+      );
     });
 
     // requested food api
