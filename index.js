@@ -27,6 +27,10 @@ async function run() {
       .db("shareBite")
       .collection("availableFoods");
 
+    const requestedFoodsCollection = client
+      .db("shareBite")
+      .collection("requestedFoods");
+
     app.get("/availableFoods", async (req, res) => {
       // console.log(req.query.foodStatus);
       const query = { foodStatus: req.query.foodStatus };
@@ -46,6 +50,12 @@ async function run() {
     app.post("/availableFoods", async (req, res) => {
       const food = req.body;
       const result = await availableFoodsCollection.insertOne(food);
+      res.send(result);
+    });
+
+    app.post("/requestedFoods", async (req, res) => {
+      const newFood = req.body;
+      const result = await requestedFoodsCollection.insertOne(newFood);
       res.send(result);
     });
 
