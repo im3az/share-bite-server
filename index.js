@@ -109,6 +109,13 @@ async function run() {
       );
     });
 
+    app.delete("/deleteFood/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const result = await availableFoodsCollection.deleteOne(query);
+      res.send(result);
+    });
+
     // requested food api
 
     app.post("/requestedFoods", async (req, res) => {
